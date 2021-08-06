@@ -1,38 +1,224 @@
-.App {
+html,
+body {
+  font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(185, 41%, 84%);
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(186, 14%, 43%);
+  height: 100vh;
+}
+
+*::placeholder {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: hsl(184, 14%, 56%);
+  opacity: .75;
+}
+
+.title {
+  display: block;
+  text-align: center; 
+  font-size: 1.5rem;
+  line-height: .5rem;
+  letter-spacing: .5rem;
+  color:hsl(183, 100%, 15%);
+  margin: 80px 0;
+}
+
+.container {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  font-size: 1.125rem;
+  box-shadow: 1px 1px 20px hsla(183, 100%, 15%, 0.15);
+}
+
+.bg {
+  background-color: hsl(183, 100%, 15%);
+  color: #fff;
+}
+
+.wrapper {
+  width: 50%;
+  border-radius: .75rem;
+  padding: 0 2rem;
+}
+
+.input-container input {
+  position: relative;
+}
+
+.input-container input, 
+.input-container input:focus {
+  font-family: "Space Mono", monospace;
+  height: 50px;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: .5rem;
+  padding: 0 15px;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  color:hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 97%);
+}
+
+.input-container input::placeholder, 
+.input-container input {
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+.input-container input:focus {
+  border: hsl(172, 67%, 45%) 2px solid;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input-container img {
+  position: absolute;
+  transform: translateY(-35px);
+  margin-left: 15px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.buttons button {
+  font-family: "Space Mono", monospace;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: hsl(183, 100%, 15%);
+  padding: .5em 1em;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  margin: 0;
+}
+
+.buttons button:focus {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.buttons input {
+  font-family: "Space Mono", monospace;
+  min-width: 0;
+  margin: .25em;
+  background-color: hsl(185, 41%, 97%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 8px; 
+}
+
+.buttons input::placeholder {
+  color: hsl(186, 14%, 43%);
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.buttons input:focus {
+  font-weight: 700;
+  outline: none;
+  border: hsl(172, 67%, 45%) 2px solid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.total-wrapper {
   display: flex;
-  flex-direction: column;
+  height: 120px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0;
+  color: hsl(189, 41%, 97%);
 }
 
-.App-link {
-  color: #61dafb;
+.total-wrapper h2 {
+  font-size: 3rem;
+  color: hsl(172, 67%, 45%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.total-wrapper .sub-text {
+  font-size: .85rem;
+  margin-top: -15px;
+  color: hsl(184, 14%, 56%)
+}
+
+.bg button {
+  width: 100%;
+  height: 50px;
+  border-radius: .5rem;
+  border: none;
+  background-color:hsl(172, 67%, 45%);
+  margin-top: 100px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(183, 100%, 15%);
+}
+
+@media (max-width: 865px) {
+
+  .container {
+    margin: 0;
+    flex-direction: column;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .wrapper, .bg {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .bg {
+    margin-top: 20px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title {
+    margin: 60px 0;
+  }
+
+  .total-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .bg button, .total-wrapper {
+    margin: 0px;
+  }
+
+  .total-wrapper:last-of-type {
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .total-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr 1fr;
   }
 }
